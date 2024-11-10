@@ -8,6 +8,20 @@ body,
   height: 100%;
 }
 
+.cl-internal-df7v37 {
+  display: none;
+}
+.cl-internal-piyvrh{
+  display: none;
+}
+
+.cl-internal-1hp5nqm {
+  display: none;
+} 
+
+.cl-button__manageAccount {
+  display: none;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

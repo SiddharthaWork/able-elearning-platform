@@ -1,4 +1,4 @@
-import { clerkClient } from "@clerk/nextjs/server";
+import { clerkClient, currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
@@ -47,7 +47,7 @@ const CourseOverview = async ({ params }: { params: { courseId: string } }) => {
       <p className="font-medium">{course.subtitle}</p>
 
       <div className="flex gap-2 items-center">
-        <Image
+        {/* <Image
           src={
             instructor.imageUrl
               ? instructor.imageUrl
@@ -57,14 +57,14 @@ const CourseOverview = async ({ params }: { params: { courseId: string } }) => {
           width={30}
           height={30}
           className="rounded-full"
-        />
-        <p className="font-bold">Instructor:</p>
-        <p>{instructor.fullName}</p>
+        /> */}
+        <p className="font-bold">Course Offered By:</p>
+        <p>ABLE</p>
       </div>
 
       <div className="flex gap-2">
         <p className="font-bold">Price:</p>
-        <p>${course.price}</p>
+        <p>NPR {course.price}</p>
       </div>
 
       <div className="flex gap-2">

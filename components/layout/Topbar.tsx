@@ -23,7 +23,7 @@ const Topbar = () => {
   const pathName = usePathname();
 
   const topRoutes = [
-    { label: "Instructor", path: "/instructor/courses" },
+    { label: "", path: "/instructor/courses" },
     { label: "Learning", path: "/learning" },
   ];
 
@@ -47,7 +47,7 @@ const Topbar = () => {
   return (
     <div className="flex justify-between items-center p-4">
       <Link href="/">
-        <Image src="/logo.png" height={100} width={200} alt="logo" />
+        <Image src="/logo10.png" height={100} width={200} alt="logo" />
       </Link>
 
       <div className="max-md:hidden w-[400px] rounded-full flex">
@@ -72,7 +72,7 @@ const Topbar = () => {
             <Link
               href={route.path}
               key={route.path}
-              className="text-sm font-medium hover:text-[#FDAB04]"
+              className="text-lg font-medium hover:text-[#FDAB04]"
             >
               {route.label}
             </Link>

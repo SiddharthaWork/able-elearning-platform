@@ -31,6 +31,9 @@ const formSchema = z.object({
   subCategoryId: z.string().min(1, {
     message: "Subcategory is required",
   }),
+  tags: z.array(z.string()).nonempty({
+    message: "At least one tag is required",
+  }),
 });
 
 interface CreateCourseFormProps {
@@ -51,6 +54,7 @@ const CreateCourseForm = ({ categories }: CreateCourseFormProps) => {
       title: "",
       categoryId: "",
       subCategoryId: "",
+      tags: [],
     },
   });
 
@@ -71,7 +75,7 @@ const CreateCourseForm = ({ categories }: CreateCourseFormProps) => {
   return (
     <div className="p-10">
       <h1 className="text-xl font-bold">
-        Let give some basics for your course
+        Let's give some basics for your course
       </h1>
       <p className="text-sm mt-3">
         It is ok if you cannot think of a good title or correct category now.
@@ -129,6 +133,30 @@ const CreateCourseForm = ({ categories }: CreateCourseFormProps) => {
                       )?.subCategories || []
                     }
                     {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          {/* New Tags Input Field */}
+          <FormField
+            control={form.control}
+            name="tags"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Tags</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Enter tags separated by commas"
+                    {...field}
+                    value={field.value.join(", ")} // Display tags as comma-separated string
+                    onChange={(e) =>
+                      field.onChange(
+                        e.target.value.split(",").map((tag) => tag.trim())
+                      )
+                    }
                   />
                 </FormControl>
                 <FormMessage />

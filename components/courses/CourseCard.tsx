@@ -35,7 +35,7 @@ const CourseCard = async ({ course }: { course: Course }) => {
         <div className="flex justify-between text-sm font-medium">
           {instructor && (
             <div className="flex gap-2 items-center">
-              <Image
+              {/* <Image
                 src={
                   instructor.imageUrl
                     ? instructor.imageUrl
@@ -47,8 +47,8 @@ const CourseCard = async ({ course }: { course: Course }) => {
                 width={30}
                 height={30}
                 className="rounded-full"
-              />
-              <p>{instructor.fullName}</p>
+              /> */}
+              {/* <p>{instructor.fullName}</p> */}
             </div>
           )}
           {level && (
@@ -59,7 +59,7 @@ const CourseCard = async ({ course }: { course: Course }) => {
           )}
         </div>
 
-        <p className="text-sm font-bold">$ {course.price}</p>
+        <p className="text-sm font-bold">NPR {course.price}</p>
       </div>
     </Link>
   );
